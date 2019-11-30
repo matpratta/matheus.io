@@ -6,10 +6,10 @@
       <span class="opening">Hello, my name is</span>
       <h1>Matheus Pratta</h1>
       <h2>I'm a Web Developer based in Nova Odessa, Brazil</h2>
-    </page-block>
 
-    <!-- Social Links -->
-    <page-block>
+      <hr />
+
+      <!-- Social Links -->
       <social-links></social-links>
     </page-block>
 
@@ -72,6 +72,19 @@
           </div>
         </timeline-entry>
       </timeline>
+    </page-block>
+
+    <!-- Contact Section -->
+    <page-block>
+      <div class="extra-spacing">
+        <!-- Social Links -->
+        <social-links></social-links>
+      </div>
+
+      <!-- Helper text -->
+      <p>You can get in touch with me via the social links above or through the contact form below:</p>
+
+      <!-- Contact Form -->
     </page-block>
   </main>
 </template>

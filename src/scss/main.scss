@@ -6,6 +6,9 @@
 // TODO: Reduce amounts of fonts
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900&display=swap');
 
+// We also need FontAwesome here
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css');
+
 // We'll insert our variables into the body element, so they propagate all the way downards to our components
 body {
   // The website default spacing
@@ -79,6 +82,9 @@ body {
 
   // Border radius
   --border-radius: 3px;
+
+  // Icon sizes
+  --icon-size: 16px;
 }
 
 // Here we create our "light theme", so that by default the user is greeted in a "dark theme" :)
@@ -164,6 +170,13 @@ body {
     border-radius: 100%;
   }
 
+  // Vertical spacer
+  hr {
+    height: var(--spacing);
+    background: transparent;
+    border: 0px none;
+  }
+
   // Opening, main and secondary titles
   .opening {
     display: block;
@@ -214,6 +227,23 @@ body {
     opacity: var(--font-normal-opacity);
 
     margin-bottom: calc(var(--spacing) / 2);
+  }
+
+  // Social links
+  .social-links {
+    display: flex;
+
+    font-size: var(--icon-size);
+
+    justify-content: space-between;
+
+    a {
+      display: block;
+      padding: 1em;
+
+      color: inherit;
+      text-decoration: none;
+    }
   }
 
   // Timeline
@@ -321,6 +351,7 @@ body {
     text-align: center;
 
     // Extra-spaced blocks
+    .extra-spacing,
     &.extra-spacing {
       padding: 0px var(--spacing);
     }
