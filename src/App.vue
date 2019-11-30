@@ -48,6 +48,31 @@
       <progress-bar title="JavaScript" :progress="0.3" />
       <progress-bar title="JavaScript" :progress="0.2" />
     </page-block>
+
+    <!-- Timeline: Work Experience -->
+    <page-block title="Work Experience">
+      <timeline>
+        <!-- Timeline entry (current work) template -->
+        <timeline-entry class="current">
+          <h4 class="experience-company">Tecnoblog</h4>
+          <strong class="experience-position">Web Developer</strong>
+          <span class="experience-time">Jul. 2019 - Today</span>
+          <div class="experience-description">
+            <p>Responsible for maintenance and optimization of the websites Tecnoblog and Meio Bit, while also developing new tools and features, both for internal and public usage, creating new pages, implementing Google DFP and Prebid, and integrating with other tools, platforms and websites.</p>
+          </div>
+        </timeline-entry>
+
+        <!-- Timeline entry (past work) template -->
+        <timeline-entry>
+          <h4 class="experience-company">Tecnoblog</h4>
+          <strong class="experience-position">Web Developer</strong>
+          <span class="experience-time">Jul. 2019 - Today</span>
+          <div class="experience-description">
+            <p>Responsible for maintenance and optimization of the websites Tecnoblog and Meio Bit, while also developing new tools and features, both for internal and public usage, creating new pages, implementing Google DFP and Prebid, and integrating with other tools, platforms and websites.</p>
+          </div>
+        </timeline-entry>
+      </timeline>
+    </page-block>
   </main>
 </template>
 
@@ -55,6 +80,8 @@
 import PageBlock from './components/PageBlock.vue'
 import SocialLinks from './components/SocialLinks.vue'
 import ProgressBar from './components/ProgressBar.vue'
+import Timeline from './components/Timeline.vue'
+import TimelineEntry from './components/TimelineEntry.vue'
 
 export default {
   name: 'app',
@@ -62,6 +89,8 @@ export default {
     PageBlock,
     SocialLinks,
     ProgressBar,
+    Timeline,
+    TimelineEntry,
   }
 }
 </script>

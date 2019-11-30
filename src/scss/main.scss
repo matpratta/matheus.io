@@ -216,6 +216,104 @@ body {
     margin-bottom: calc(var(--spacing) / 2);
   }
 
+  // Timeline
+  .timeline {
+    position: relative;
+    padding-left: var(--spacing);
+
+    // Draw the timeline bar
+    &:before {
+      content: ' ';
+      display: block;
+      width: 1px;
+
+      background: var(--theme-foreground);
+      
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      bottom: 0px;
+      transform: translateX(-50%);
+    }
+
+    // Entries
+    .timeline-entry {
+      position: relative;
+      text-align: left;
+
+      margin-bottom: var(--spacing-vertical);
+
+      // Draw the bullet
+      &:before {
+        content: ' ';
+        display: block;
+        
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        transform: translateX(-50%);
+
+        width: 1em;
+        height: 1em;
+        margin-left: calc(-1 * var(--spacing));
+
+        border-radius: 1em;
+
+        border: 1px solid var(--theme-foreground);
+        background: var(--theme-background);
+      }
+
+      // Current work gets a filled bullet
+      &.current:before {
+        background: var(--theme-foreground);
+      }
+
+      // Fields
+      .experience-position {
+        display: block;
+        margin: 0px;
+        margin-bottom: calc(var(--spacing) / 8);
+
+        font-size: var(--font-normal-size);
+        font-weight: var(--font-normal-weight);
+        letter-spacing: var(--font-normal-spacing);
+        opacity: var(--font-normal-opacity);
+      }
+      .experience-company {
+        display: block;
+        margin: 0px;
+        margin-bottom: calc(var(--spacing) / 8);
+
+        font-size: var(--font-light-size);
+        font-weight: var(--font-lighteweight);
+        letter-spacing: var(--font-light-spacing);
+        opacity: var(--font-light-opacity);
+      }
+      .experience-time {
+        display: block;
+        margin: 0px;
+        margin-bottom: calc(var(--spacing) / 8);
+
+        font-size: var(--font-lightest-size);
+        font-weight: var(--font-lightest-weight);
+        letter-spacing: var(--font-lightest-spacing);
+        opacity: var(--font-lightest-opacity);
+      }
+
+      .experience-description {
+        display: block;
+        margin: 0px;
+        margin-bottom: calc(var(--spacing) / 8);
+
+        text-transform: none;
+        font-size: var(--font-lighter-size);
+        font-weight: var(--font-lighter-weight);
+        letter-spacing: var(--font-lighter-spacing);
+        opacity: var(--font-lighter-opacity);
+      }
+    }
+  }
+
   // Page blocks
   .page-block {
     margin-bottom: var(--spacing-vertical);
