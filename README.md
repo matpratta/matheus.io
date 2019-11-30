@@ -1,19 +1,7 @@
-# io.matheus
+# Meu website pessoal. Edição 2019-2020
 
-## Project setup
-```
-npm install
-```
+Redesign completo do meu site pessoal com direito a integração para facilitar no deploy.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Deployment
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Todas configurações de deployment estão definidas no arquivo `now.json`.

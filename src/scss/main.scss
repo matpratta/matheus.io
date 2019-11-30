@@ -1,0 +1,235 @@
+/**
+ * This code is part of matheus.io, it is freely available for study, hacking or whatever you want to do with it.
+ */
+
+// This website uses the font Montserrat @ weights 300 (Light), 400 (Regular), 500 (Medium), 700 (Bold) and 900 (Black)
+// TODO: Reduce amounts of fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900&display=swap');
+
+// We'll insert our variables into the body element, so they propagate all the way downards to our components
+body {
+  // The website default spacing
+  --spacing: 30px;
+  --spacing-vertical: 75px;
+
+  // Here we define our website's main theme colors
+  --theme-background: #0d0428;
+  --theme-background-light: #1e143d;
+  --theme-foreground: #ffffff;
+  --theme-foreground-light: rgba(#ffffff, 0.70);
+  --theme-foreground-lighter: rgba(#ffffff, 0.50);
+
+  // Here we define our accent colors
+  --theme-accent-foreground: var(--theme-background);
+  --theme-accent-fill-01: #28ff85;
+  --theme-accent-fill-02: #ffa72d;
+  --theme-accent-fill-03: #2672ff;
+  --theme-accent-fill-04: #ff3d81;
+
+  // Font settings
+  --font: 'Montserrat', 'Helvetica Neue', sans-serif;
+
+  // Lightest: Used in Work Experience dates
+  --font-lightest-size: 12px;
+  --font-lightest-weight: 300;
+  --font-lightest-spacing: 0.25em;
+  --font-lightest-opacity: 0.80;
+
+  // Lighter: Used in Work Experience texts
+  --font-lighter-size: 12px;
+  --font-lighter-weight: 400;
+  --font-lighter-spacing: 0.10em;
+  --font-lighter-opacity: 0.70;
+
+  // Light: Used in Work Experience Company Name
+  --font-light-size: 12px;
+  --font-light-weight: 400;
+  --font-light-spacing: 0.25em;
+  --font-light-opacity: 1.00;
+
+  // Normal: The default font style, used pretty much everywhere else
+  --font-normal-size: 12px;
+  --font-normal-weight: 500;
+  --font-normal-spacing: 0.25em;
+  --font-normal-opacity: 1.00;
+
+  // Heading: Used in headings
+  --font-heading-size: 16px;
+  --font-heading-weight: 700;
+  --font-heading-spacing: 0.25em;
+  --font-heading-opacity: 1.00;
+
+  // Subtitle: Used in the subtitle at opening of website
+  --font-subtitle-size: 12px;
+  --font-subtitle-weight: 500;
+  --font-subtitle-spacing: 0.15em;
+  --font-subtitle-opacity: 1.00;
+
+  // Title: Used in the title at opening of website
+  --font-title-size: 24px;
+  --font-title-weight: 900;
+  --font-title-spacing: 0.00em;
+  --font-title-opacity: 1.00;
+
+  // Opening: Used in the opening of website
+  --font-opening-size: 16px;
+  --font-opening-weight: 500;
+  --font-opening-spacing: 0.25em;
+  --font-opening-opacity: 1.00;
+
+  // Border radius
+  --border-radius: 3px;
+}
+
+// Here we create our "light theme", so that by default the user is greeted in a "dark theme" :)
+body.light-theme {
+  // Here we define our website's main theme colors
+  --theme-background: #ffffff;
+  --theme-background-light: #eeeeee;
+  --theme-foreground: #0d0428;
+  --theme-foreground-light: #1e143d;
+  --theme-foreground-lighter: rgba(#1e143d, 0.70);
+
+  // Here we define our accent colors
+  --theme-accent-foreground: var(--theme-background);
+  --theme-accent-fill-01: #28ff85;
+  --theme-accent-fill-02: #ffa72d;
+  --theme-accent-fill-03: #2672ff;
+  --theme-accent-fill-04: #ff3d81;
+}
+
+// Now we code our components as we would
+body {
+  // Adds proper padding to body and removes margins
+  box-sizing: border-box;
+  padding: 0px var(--spacing);
+  margin: 0px 0px;
+
+  // Sets-up the font
+  font-family: var(--font);
+  font-size: var(--font-normal-size);
+  letter-spacing: var(--font-normal-spacing);
+  text-transform: uppercase;
+
+  // Main body colors
+  color: var(--theme-foreground);
+  background: var(--theme-background);
+
+  // The progress bar with title component
+  .progress-bar {
+    margin-bottom: var(--spacing);
+
+    .progress-bar-container {
+      position: relative;
+
+      height: var(--font-normal-size);
+      border-radius: var(--border-radius);
+
+      background: var(--theme-background-light);
+
+      &:before {
+        content: ' ';
+        display: block;
+
+        background: var(--accent);
+        border-radius: var(--border-radius);
+
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        width: calc(100% * var(--progress));
+
+        animation: progress-bar-fill 2s cubic-bezier(.75, 0, .35, 1) forwards normal 1;
+      }
+
+      @keyframes progress-bar-fill {
+        0% { max-width: 0px; }
+        100% { max-width: calc(var(--progress) * 100%); }
+      }
+    }
+  }
+
+  // Cores accent dos componentes
+  .accent-01 { --accent: var(--theme-accent-fill-01); }
+  .accent-02 { --accent: var(--theme-accent-fill-02); }
+  .accent-03 { --accent: var(--theme-accent-fill-03); }
+  .accent-04 { --accent: var(--theme-accent-fill-04); }
+
+  // Centers images
+  img {
+    display: block;
+    max-width: 100%;
+    margin: 0px auto;
+    border-radius: 100%;
+  }
+
+  // Opening, main and secondary titles
+  .opening {
+    display: block;
+
+    font-size: var(--font-opening-size);
+    font-weight: var(--font-opening-weight);
+    letter-spacing: var(--font-opening-spacing);
+    opacity: var(--font-opening-opacity);
+
+    margin-top: var(--spacing-vertical);
+  }
+  h1, h2, h3, h4 {
+    padding: 0px;
+    margin: 0px;
+  }
+  h1 {
+    font-size: var(--font-title-size);
+    font-weight: var(--font-title-weight);
+    letter-spacing: var(--font-title-spacing);
+    opacity: var(--font-title-opacity);
+
+    margin-top: calc(var(--spacing) / 2);
+  }
+  h2 {
+    font-size: var(--font-subtitle-size);
+    font-weight: var(--font-subtitle-weight);
+    letter-spacing: var(--font-subtitle-spacing);
+    opacity: var(--font-subtitle-opacity);
+
+    margin-top: var(--spacing-vertical);
+  }
+
+  // Page block titles
+  h3 {
+    font-size: var(--font-heading-size);
+    font-weight: var(--font-heading-weight);
+    letter-spacing: var(--font-heading-spacing);
+    opacity: var(--font-heading-opacity);
+    
+    margin-bottom: var(--spacing);
+  }
+
+  // Inner titles
+  h4 {
+    font-size: var(--font-normal-size);
+    font-weight: var(--font-normal-weight);
+    letter-spacing: var(--font-normal-spacing);
+    opacity: var(--font-normal-opacity);
+
+    margin-bottom: calc(var(--spacing) / 2);
+  }
+
+  // Page blocks
+  .page-block {
+    margin-bottom: var(--spacing-vertical);
+    
+    text-align: center;
+
+    // Extra-spaced blocks
+    &.extra-spacing {
+      padding: 0px var(--spacing);
+    }
+  }
+
+  // Main element
+  main {
+    padding-top: var(--spacing-vertical);
+  }
+}
