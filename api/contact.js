@@ -54,6 +54,7 @@ module.exports = async (req, res) => {
     })
   } catch (e) {
     // Send back the error
+    console.error(e)
     res.status(500).send({
       sent: false,
       error: e

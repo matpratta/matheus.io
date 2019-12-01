@@ -70,13 +70,16 @@
         <p>You can get in touch with me via the social links above or through the contact form below:</p>
 
         <!-- Contact Form -->
-        <form action="/api/contact.js" method="post">
+        <improved-form :class="{ submitted: formSubmitted }" action="/api/contact.js" method="post" @submit-response="handleSubmitResponse">
           <text-box name="name" placeholder="Name" icon="far fa-smile" />
           <text-box name="email" placeholder="Email" icon="far fa-envelope" type="email" />
           <text-box name="subject" placeholder="Subject" icon="far fa-sticky-note" />
           <text-box name="message" placeholder="Message" icon="far fa-comment-dots" :lines="5" />
           <button type="submit">Send</button>
-        </form>
+        </improved-form>
+
+        <!-- Confirmation message -->
+        <p v-if="formSubmitted">Your message was received! Soon I will be in touch with you back!</p>
       </page-block>
     </div>
   </main>
@@ -90,12 +93,14 @@ import Timeline from './components/Timeline.vue'
 import TimelineEntry from './components/TimelineEntry.vue'
 import TextBox from './components/TextBox.vue'
 import LightThemeSwitch from './components/LightThemeSwitch.vue'
+import ImprovedForm from './components/ImprovedForm.vue'
 
 export default {
   name: 'app',
   data () {
     return {
-      resume: require('./assets/resume.json')
+      resume: require('./assets/resume.json'),
+      formSubmitted: false
     }
   },
   computed: {
@@ -110,6 +115,19 @@ export default {
     TimelineEntry,
     TextBox,
     LightThemeSwitch,
+    ImprovedForm,
+  },
+  methods: {
+    handleSubmitResponse ({ success, response, error }) {
+      // Did our response succeeded?
+      if (success) {
+        // Update our interface
+        this.formSubmitted = true
+      } else {
+        // Show an error message
+        alert('Sorry, could not send your message now. Please try again later.')
+      }
+    }
   }
 }
 </script>
