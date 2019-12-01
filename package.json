@@ -10,7 +10,8 @@
     "@sendgrid/mail": "^6.4.0",
     "axios": "^0.19.0",
     "core-js": "^3.4.3",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-analytics": "^5.18.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.0",
