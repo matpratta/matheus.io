@@ -111,6 +111,29 @@ body.light-theme {
   --theme-accent-fill-04: #ff3d81;
 }
 
+// Here we set our print styles, by default we're gonna use the "light theme" from above
+@media print {
+  body {
+    // The website print spacing
+    --spacing: 20px;
+    --spacing-vertical: 40px;
+
+    // Here we define our website's main theme colors
+    --theme-background: #ffffff;
+    --theme-background-light: #eeeeee;
+    --theme-foreground: #0d0428;
+    --theme-foreground-light: #1e143d;
+    --theme-foreground-lighter: rgba(#1e143d, 0.70);
+
+    // Here we define our accent colors
+    --theme-accent-foreground: var(--theme-background);
+    --theme-accent-fill-01: #28ff85;
+    --theme-accent-fill-02: #ffa72d;
+    --theme-accent-fill-03: #2672ff;
+    --theme-accent-fill-04: #ff3d81;
+  }
+}
+
 // Now we code our components as we would
 body {
   // Adds proper padding to body and removes margins
@@ -486,5 +509,48 @@ body {
     .grid-left { grid-area: 1 / 1 / 2 / 2; }
     .grid-right { grid-area: 1 / 2 / 2 / 3; }
     .grid-bottom { grid-area: 2 / 1 / 3 / 3; }
+  }
+
+  // Print styles
+  @media print {
+    // Reduce the progress bars
+    .progress-bar {
+      .progress-bar-container {
+        height: calc(var(--font-normal-size) / 2);
+      }
+    }
+
+    // Reduces image size
+    img {
+      max-width: 65%;
+    }
+
+    // Reduces the spacer too
+    hr {
+      height: calc(var(--spacing) / 3);
+    }
+
+    // Remove social links
+    .social-links {
+      display: none;
+    }
+
+    // Grid layout for our desktop website
+    main {
+      width: 18cm;
+      max-width: 100%;
+      margin: 0px auto;
+
+      display: grid;
+      grid-template-columns: 4fr 5fr;
+      grid-template-rows: auto auto;
+      grid-column-gap: var(--spacing);
+      grid-row-gap: 0px;
+    }
+
+    // Position stuff on the grid
+    .grid-left { grid-area: 1 / 1 / 2 / 2; }
+    .grid-right { grid-area: 1 / 2 / 2 / 3; }
+    .grid-bottom { display: none; }
   }
 }
