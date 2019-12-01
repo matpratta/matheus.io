@@ -39,12 +39,14 @@ module.exports = async (req, res) => {
       to: EMAIL_TO,
       from: EMAIL_FROM,
       replyto: email,
-      subject: `Contact Form: ${subject}`,
+      subject: `Contact Form: ${subject} - ${subject}`,
       text: emailBody
     }
 
     // Attempt to send the email
-    const emailResponse = SendGrid.send(emailHeaders)
+    const emailResponse = await SendGrid.send(emailHeaders)
+
+    // Do whatever you want with the response here, maybe log it?
 
     // Respond properly
     res.send({
