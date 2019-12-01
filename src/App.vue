@@ -70,7 +70,7 @@
         <p>You can get in touch with me via the social links above or through the contact form below:</p>
 
         <!-- Contact Form -->
-        <form action="/contact" method="post">
+        <form action="/api/contact.js" method="post">
           <text-box name="name" placeholder="Name" icon="far fa-smile" />
           <text-box name="email" placeholder="Email" icon="far fa-envelope" type="email" />
           <text-box name="subject" placeholder="Subject" icon="far fa-sticky-note" />
