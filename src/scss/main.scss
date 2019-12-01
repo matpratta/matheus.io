@@ -19,8 +19,8 @@ body {
   --theme-background: #0d0428;
   --theme-background-light: #1e143d;
   --theme-foreground: #ffffff;
-  --theme-foreground-light: rgba(#ffffff, 0.70);
-  --theme-foreground-lighter: rgba(#ffffff, 0.50);
+  --theme-foreground-light: rgba(255, 255, 255, 0.70);
+  --theme-foreground-lighter: rgba(255, 255, 255, 0.50);
 
   // Here we define our accent colors
   --theme-accent-foreground: var(--theme-background);
@@ -79,6 +79,13 @@ body {
   --font-opening-weight: 500;
   --font-opening-spacing: 0.25em;
   --font-opening-opacity: 1.00;
+
+  // Inputs: Used in the contact inputs
+  --font-input-size: 16px;
+  --font-input-size-icon: 12px;
+  --font-input-weight: 400;
+  --font-input-spacing: 0.15em;
+  --font-input-opacity-placeholder: 0.50;
 
   // Border radius
   --border-radius: 3px;
@@ -344,6 +351,98 @@ body {
     }
   }
 
+  // Textbox
+  .textbox {
+    display: flex;
+    margin-bottom: var(--spacing);
+
+    background: var(--theme-background-light);
+
+    border-radius: var(--border-radius);
+    overflow: hidden;
+
+    font-size: var(--font-input-size);
+    font-weight: var(--font-input-weight);
+    letter-spacing: var(--font-input-spacing);
+
+    // Icon
+    .textbox-icon {
+      display: block;
+      width: var(--spacing);
+      height: calc(3 * var(--font-input-size));
+
+      font-size: var(--font-input-size-icon);
+      line-height: calc(3 * var(--font-input-size));
+      text-align: center;
+      letter-spacing: 0px;
+    }
+
+    // The actual field
+    input { height: 1em; }
+    .textbox-input {
+      display: block;
+      flex: 1;
+
+      border: 0px none;
+      background: transparent;
+
+      font: inherit;
+      line-height: 1em;
+      color: inherit;
+
+      padding: 1em 1em 1em 0.333em;
+
+      resize: none;
+
+      &::placeholder {
+        // Chrome, Firefox, Opera, Safari 10.1+
+        color: inherit;
+        opacity: var(--font-input-opacity-placeholder);
+        text-transform: uppercase;
+        letter-spacing: var(--font-input-spacing);
+      }
+
+      &:-ms-input-placeholder {
+        // Internet Explorer 10-11
+        color: inherit;
+        opacity: var(--font-input-opacity-placeholder);
+        text-transform: uppercase;
+        letter-spacing: var(--font-input-spacing);
+      }
+
+      &::-ms-input-placeholder {
+        // Microsoft Edge
+        color: inherit;
+        opacity: var(--font-input-opacity-placeholder);
+        text-transform: uppercase;
+        letter-spacing: var(--font-input-spacing);
+      }
+    }
+  }
+  
+  // Buttons
+  button {
+    height: 3em;
+    padding: 1em 2em;
+    line-height: 1em;
+
+    color: var(--theme-foreground);
+    background: var(--theme-background-light);
+
+    border: 0px none;
+    border-radius: var(--border-radius);
+
+    font-size: var(--font-opening-size);
+    font-weight: var(--font-opening-weight);
+    letter-spacing: var(--font-opening-spacing);
+    text-transform: uppercase;
+
+    &[type="submit"] {
+      color: var(--theme-background);
+      background: var(--theme-accent-fill-01);
+    }
+  }
+
   // Page blocks
   .page-block {
     margin-bottom: var(--spacing-vertical);
@@ -355,6 +454,12 @@ body {
     &.extra-spacing {
       padding: 0px var(--spacing);
     }
+
+    &>p {
+      margin: var(--spacing) auto;
+    }
+
+    &:last-child { margin-bottom: calc(var(--spacing-vertical) / 2); }
   }
 
   // Main element

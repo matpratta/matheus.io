@@ -75,7 +75,7 @@
     </page-block>
 
     <!-- Contact Section -->
-    <page-block>
+    <page-block title="Contact Me">
       <div class="extra-spacing">
         <!-- Social Links -->
         <social-links></social-links>
@@ -85,6 +85,13 @@
       <p>You can get in touch with me via the social links above or through the contact form below:</p>
 
       <!-- Contact Form -->
+      <form action="/contact" method="post">
+        <text-box name="name" placeholder="Name" icon="far fa-smile" />
+        <text-box name="email" placeholder="Email" icon="far fa-envelope" type="email" />
+        <text-box name="subject" placeholder="Subject" icon="far fa-sticky-note" />
+        <text-box name="message" placeholder="Message" icon="far fa-comment-dots" lines="5" />
+        <button type="submit">Send</button>
+      </form>
     </page-block>
   </main>
 </template>
@@ -95,6 +102,7 @@ import SocialLinks from './components/SocialLinks.vue'
 import ProgressBar from './components/ProgressBar.vue'
 import Timeline from './components/Timeline.vue'
 import TimelineEntry from './components/TimelineEntry.vue'
+import TextBox from './components/TextBox.vue'
 
 export default {
   name: 'app',
@@ -104,6 +112,7 @@ export default {
     ProgressBar,
     Timeline,
     TimelineEntry,
+    TextBox,
   }
 }
 </script>
