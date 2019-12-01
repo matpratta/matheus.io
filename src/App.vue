@@ -20,38 +20,22 @@
 
       <!-- Stats: Languages -->
       <page-block title="Languages" class="accent-01">
-        <progress-bar title="JavaScript" :progress="0.8" />
-        <progress-bar title="JavaScript" :progress="0.6" />
-        <progress-bar title="JavaScript" :progress="0.5" />
-        <progress-bar title="JavaScript" :progress="0.3" />
-        <progress-bar title="JavaScript" :progress="0.2" />
+        <progress-bar :title="skill" :progress="score" v-for="(score, skill) in skills.languages" v-bind:key="skill" />
       </page-block>
 
       <!-- Stats: Tools & Frameworks -->
       <page-block title="Tools &amp; Frameworks" class="accent-02">
-        <progress-bar title="JavaScript" :progress="0.8" />
-        <progress-bar title="JavaScript" :progress="0.6" />
-        <progress-bar title="JavaScript" :progress="0.5" />
-        <progress-bar title="JavaScript" :progress="0.3" />
-        <progress-bar title="JavaScript" :progress="0.2" />
+        <progress-bar :title="skill" :progress="score" v-for="(score, skill) in skills.tools" v-bind:key="skill" />
       </page-block>
 
       <!-- Stats: Knowledge Areas -->
       <page-block title="Knowledge Areas" class="accent-03">
-        <progress-bar title="JavaScript" :progress="0.8" />
-        <progress-bar title="JavaScript" :progress="0.6" />
-        <progress-bar title="JavaScript" :progress="0.5" />
-        <progress-bar title="JavaScript" :progress="0.3" />
-        <progress-bar title="JavaScript" :progress="0.2" />
+        <progress-bar :title="skill" :progress="score" v-for="(score, skill) in skills.areas" v-bind:key="skill" />
       </page-block>
 
       <!-- Stats: Other Skills -->
       <page-block title="Other Skills" class="accent-04">
-        <progress-bar title="JavaScript" :progress="0.8" />
-        <progress-bar title="JavaScript" :progress="0.6" />
-        <progress-bar title="JavaScript" :progress="0.5" />
-        <progress-bar title="JavaScript" :progress="0.3" />
-        <progress-bar title="JavaScript" :progress="0.2" />
+        <progress-bar :title="skill" :progress="score" v-for="(score, skill) in skills.other" v-bind:key="skill" />
       </page-block>
     </div>
 
@@ -60,23 +44,13 @@
       <!-- Timeline: Work Experience -->
       <page-block title="Work Experience">
         <timeline>
-          <!-- Timeline entry (current work) template -->
-          <timeline-entry class="current">
-            <h4 class="experience-company">Tecnoblog</h4>
-            <strong class="experience-position">Web Developer</strong>
-            <span class="experience-time">Jul. 2019 - Today</span>
-            <div class="experience-description">
-              <p>Responsible for maintenance and optimization of the websites Tecnoblog and Meio Bit, while also developing new tools and features, both for internal and public usage, creating new pages, implementing Google DFP and Prebid, and integrating with other tools, platforms and websites.</p>
-            </div>
-          </timeline-entry>
-
-          <!-- Timeline entry (past work) template -->
-          <timeline-entry>
-            <h4 class="experience-company">Tecnoblog</h4>
-            <strong class="experience-position">Web Developer</strong>
-            <span class="experience-time">Jul. 2019 - Today</span>
-            <div class="experience-description">
-              <p>Responsible for maintenance and optimization of the websites Tecnoblog and Meio Bit, while also developing new tools and features, both for internal and public usage, creating new pages, implementing Google DFP and Prebid, and integrating with other tools, platforms and websites.</p>
+          <!-- Timeline entry template -->
+          <timeline-entry :class="{ current: entry.current }" v-for="(entry, i) in timeline" v-bind:key="i">
+            <h4 class="experience-company">{{ entry.title }}</h4>
+            <strong class="experience-position">{{ entry.subtitle }}</strong>
+            <span class="experience-time">{{ entry.period }}</span>
+            <div class="experience-description" v-if="entry.description">
+              <p v-for="(paragraph, i) in entry.description" v-bind:key="i">{{ paragraph }}</p>
             </div>
           </timeline-entry>
         </timeline>
@@ -119,6 +93,15 @@ import LightThemeSwitch from './components/LightThemeSwitch.vue'
 
 export default {
   name: 'app',
+  data () {
+    return {
+      resume: require('./assets/resume.json')
+    }
+  },
+  computed: {
+    timeline () { return this.resume.timeline.reverse() },
+    skills () { return this.resume.skills }
+  },
   components: {
     PageBlock,
     SocialLinks,

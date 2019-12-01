@@ -1,0 +1,102 @@
+{
+  "skills": {
+    "languages": {
+      "JavaScript": 0.86,
+      "PHP": 0.79,
+      "HTML5": 0.65,
+      "CSS/SCSS": 0.59,
+      "C#": 0.24,
+      "C/C++": 0.08
+    },
+    "tools": {
+      "Laravel": 0.74,
+      "Vue.js": 0.68,
+      "Express": 0.59,
+      "Zeit Now": 0.46
+    },
+    "areas": {
+      "Back-end Development": 0.85,
+      "Front-end Development": 0.74,
+      "Severless Development": 0.42,
+      "Mobile Development": 0.26,
+      "Server Management": 0.41
+    },
+    "other": {
+      "Photography": 0.67,
+      "UI Design": 0.49,
+      "UX / Prototyping": 0.41
+    }
+  },
+  "timeline": [
+    {
+      "type": "work",
+      "title": "LunarCP",
+      "subtitle": "Support Staff & Forum Moderator",
+      "period": "Dec. 2011 - Apr. 2014",
+      "description": [
+        "I helped both as Forum Moderator and Support Staff for a free web hosting initiative, which in turn helped many people start their careers with web development, specially on developing countries and regions where one couldn't afford paying for hosting.",
+        "One of the challenges I had to deal with, along with the team, was tracking down and removing malicious users who created accounts for abusing, spamming and phishing.",
+        "This period of volunteer work provided me not only a lot of learning on web technologies, but also great networking and real experience with English."
+      ]
+    }, {
+      "type": "work",
+      "title": "Freelancer",
+      "subtitle": "Web Developer",
+      "period": "Nov. 2011 - Sep. 2013",
+      "description": [
+        "My first actual direct contact at working with web development. Developed a few institutional websites for local companies and a small CMS for a realtor."
+      ]
+    }, {
+      "type": "work",
+      "title": "Digital Video",
+      "subtitle": "Video Editor",
+      "period": "Oct. 2012 - Mar. 2014",
+      "description": [
+        "Worked mostly editing social events like weddings, with some experience too in camera operation, color grading and disc authoring while using tools like Adobe Premiere Pro, Photoshop, Encore, Sony DVD Architect and GrassValley Edius."
+      ]
+    }, {
+      "type": "work",
+      "title": "Foto Click Digital",
+      "subtitle": "Photo Editor",
+      "period": "Jan. 2014 - Nov. 2015",
+      "description": [
+        "Worked editing event and studio photography, while also creating designs for cards, clothing and similar stuff. Also worked with videography for some time and video editing for the same company."
+      ]
+    }, {
+      "type": "work",
+      "title": "B2S Marketing",
+      "subtitle": "Full-stack Web Developer",
+      "period": "Jun. 2016 - Jun. 2019",
+      "description": [
+        "Responsible for development, maintenance and optimization of our internal and client's applications, systems and websites, using tools like WordPress, Laravel, Lliure and CodeIgniter.",
+        "Also did some work regarding performance and SEO analysis and optimizations for existing and new clients."
+      ]
+    }, {
+      "type": "work",
+      "title": "Tecnoblog",
+      "subtitle": "Full-stack Web Developer",
+      "period": "Jun. 2018 - Sep. 2018",
+      "description": [
+        "Responsible for maintenance and optimization of the websites Tecnoblog and Meio Bit, while also developing new tools and features, both for internal and public usage, creating new pages, implementing Google DFP and Prebid, and integrating with other tools, platforms and websites."
+      ]
+    }, {
+      "type": "work",
+      "title": "Subatomic",
+      "subtitle": "CEO & Developer",
+      "period": "Nov. 2015 - Today",
+      "current": true,
+      "description": [
+        "Company I started for freelancing. Most work is either development, support or maintenance for a few local clients and agencies with websites or web-based applications."
+      ]
+    }, {
+      "type": "work",
+      "title": "Tecnoblog",
+      "subtitle": "Developer",
+      "period": "Jul. 2019 - Today",
+      "current": true,
+      "description": [
+        "Responsible for maintenance and optimization of the websites Tecnoblog and Meio Bit, while also developing new tools and features, both for internal and public usage, creating new pages, implementing Google DFP and Prebid, and integrating with other tools, platforms and websites."
+      ]
+    }
+  ]
+}
