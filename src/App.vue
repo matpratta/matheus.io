@@ -103,6 +103,10 @@ export default {
       formSubmitted: false
     }
   },
+  mounted () {
+    // Send GA pageview
+    this.$ga.page('/')
+  },
   computed: {
     timeline () { return this.resume.timeline.reverse() },
     skills () { return this.resume.skills }
@@ -123,6 +127,9 @@ export default {
       if (success) {
         // Update our interface
         this.formSubmitted = true
+
+        // Send to GA
+        this.$ga.event('Contact Form', 'message', 'Submitted the contact form', 1.00)
       } else {
         // Show an error message
         alert('Sorry, could not send your message now. Please try again later.')
