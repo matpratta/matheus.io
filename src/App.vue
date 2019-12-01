@@ -2,6 +2,9 @@
   <main id="app">
     <!-- Desktop Grid: Left side -->
     <div class="grid-left">
+      <!-- Theme Switch -->
+      <light-theme-switch />
+
       <!-- Main Heading -->
       <page-block class="extra-spacing">
         <img src="./assets/me.jpg" alt="Hi, this is me!" />
@@ -97,7 +100,7 @@
           <text-box name="name" placeholder="Name" icon="far fa-smile" />
           <text-box name="email" placeholder="Email" icon="far fa-envelope" type="email" />
           <text-box name="subject" placeholder="Subject" icon="far fa-sticky-note" />
-          <text-box name="message" placeholder="Message" icon="far fa-comment-dots" lines="5" />
+          <text-box name="message" placeholder="Message" icon="far fa-comment-dots" :lines="5" />
           <button type="submit">Send</button>
         </form>
       </page-block>
@@ -112,6 +115,7 @@ import ProgressBar from './components/ProgressBar.vue'
 import Timeline from './components/Timeline.vue'
 import TimelineEntry from './components/TimelineEntry.vue'
 import TextBox from './components/TextBox.vue'
+import LightThemeSwitch from './components/LightThemeSwitch.vue'
 
 export default {
   name: 'app',
@@ -122,6 +126,7 @@ export default {
     Timeline,
     TimelineEntry,
     TextBox,
+    LightThemeSwitch,
   }
 }
 </script>

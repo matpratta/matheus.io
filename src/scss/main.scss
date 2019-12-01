@@ -104,7 +104,7 @@ body.light-theme {
   --theme-foreground-lighter: rgba(#1e143d, 0.70);
 
   // Here we define our accent colors
-  --theme-accent-foreground: var(--theme-background);
+  --theme-accent-foreground: var(--theme-foreground);
   --theme-accent-fill-01: #28ff85;
   --theme-accent-fill-02: #ffa72d;
   --theme-accent-fill-03: #2672ff;
@@ -461,8 +461,47 @@ body {
     text-transform: uppercase;
 
     &[type="submit"] {
-      color: var(--theme-background);
+      color: var(--theme-accent-foreground);
       background: var(--theme-accent-fill-01);
+    }
+
+    &.toggle-switch {
+      position: relative;
+
+      cursor: pointer;
+
+      font-size: inherit;
+      
+      width: 4.5em;
+      border-radius: 3em;
+
+      &:before {
+        content: ' ';
+        display: block;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0.8em;
+        height: 0.8em;
+        transform: translate(-75%, -50%);
+
+        font-size: 3em;
+        border-radius: 1em;
+
+        background: var(--theme-foreground);
+
+        will-change: transform;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      &.enabled {
+        &:before {
+          transform: translate(-25%, -50%);
+
+          background: var(--theme-accent-fill-01);
+        }
+      }
     }
   }
 
