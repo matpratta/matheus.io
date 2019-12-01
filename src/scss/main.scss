@@ -466,4 +466,25 @@ body {
   main {
     padding-top: var(--spacing-vertical);
   }
+
+  // Desktop styles
+  @media (min-width: 767px) {
+    // Grid layout for our desktop website
+    main {
+      width: 900px;
+      max-width: 100%;
+      margin: 0px auto;
+
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: auto auto;
+      grid-column-gap: var(--spacing);
+      grid-row-gap: 0px;
+    }
+
+    // Position stuff on the grid
+    .grid-left { grid-area: 1 / 1 / 2 / 2; }
+    .grid-right { grid-area: 1 / 2 / 2 / 3; }
+    .grid-bottom { grid-area: 2 / 1 / 3 / 3; }
+  }
 }
