@@ -5,10 +5,12 @@
   "builds": [
     { "src": "api/**.js", "use": "@now/node" },
     { "src": "public/favicon.png", "use": "@now/static" },
+    { "src": "public/thumbnail.png", "use": "@now/static" },
     { "src": "package.json", "use": "@now/static-build" }
   ],
   "routes": [
     { "src": "/favicon.png", "dest": "/public/favicon.png" },
+    { "src": "/thumbnail.png", "dest": "/public/thumbnail.png" },
     { "src": "^/api/(.*)", "dest": "/api/$1"},
     { "src": "^/css/(.*)", "dest": "/css/$1" },
     { "src": "^/img/(.*)", "dest": "/img/$1" },
