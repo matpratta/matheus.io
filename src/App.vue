@@ -71,10 +71,10 @@
 
         <!-- Contact Form -->
         <improved-form :class="{ submitted: formSubmitted }" action="/api/contact.js" method="post" @submit-response="handleSubmitResponse">
-          <text-box name="name" placeholder="Name" icon="far fa-smile" />
-          <text-box name="email" placeholder="Email" icon="far fa-envelope" type="email" />
-          <text-box name="subject" placeholder="Subject" icon="far fa-sticky-note" />
-          <text-box name="message" placeholder="Message" icon="far fa-comment-dots" :lines="5" />
+          <text-box required name="name" placeholder="Name" icon="far fa-smile" />
+          <text-box required name="email" placeholder="Email" icon="far fa-envelope" type="email" />
+          <text-box required name="subject" placeholder="Subject" icon="far fa-sticky-note" />
+          <text-box required name="message" placeholder="Message" icon="far fa-comment-dots" :lines="5" />
           <button type="submit">Send</button>
         </improved-form>
 
