@@ -27,6 +27,17 @@ module.exports = async (req, res) => {
     // Extract our fields
     const { name, email, subject, message } = req.body
 
+    // Check our fields length
+    if (
+      name.length == 0 ||
+      email.length == 0 ||
+      subject.length == 0 ||
+      message.length == 0
+    ) return res.status(400).send({
+      sent: false,
+      error: 'All fields are required.'
+    })
+
     // Create our body
     const emailBody = `You received a new contact from ${name}!
       From: ${name} <${email}>
