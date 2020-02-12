@@ -269,11 +269,15 @@ body {
 
     a {
       display: block;
-      padding: 1em;
+      padding: 1em 0.75em;
 
       color: inherit;
       text-decoration: none;
     }
+  }
+
+  .grid-left .social-links {
+    font-size: 15px;
   }
 
   // Timeline
@@ -488,6 +492,8 @@ body {
 
     &.toggle-switch {
       position: relative;
+
+      @media print { display: none }
 
       cursor: pointer;
 
