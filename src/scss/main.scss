@@ -71,7 +71,7 @@ body {
   // Title: Used in the title at opening of website
   --font-title-size: 24px;
   --font-title-weight: 900;
-  --font-title-spacing: 0.00em;
+  --font-title-spacing: -0.01em;
   --font-title-opacity: 1.00;
 
   // Opening: Used in the opening of website
@@ -112,7 +112,10 @@ body.light-theme {
 }
 
 // Here we set our print styles, by default we're gonna use the "light theme" from above
+.print-only { display: none; }
 @media print {
+  .print-only { display: block; }
+
   body {
     // The website print spacing
     --spacing: 20px;
@@ -259,6 +262,21 @@ body {
     margin-bottom: calc(var(--spacing) / 2);
   }
 
+  // Contact information
+  .contact-info {
+    a {
+      display: block;
+      color: inherit;
+      text-transform: none;
+      text-decoration: none;
+      letter-spacing: 1px;
+
+      &+a {
+        margin-top: 0.5em;
+      }
+    }
+  }
+
   // Social links
   .social-links {
     display: flex;
@@ -274,10 +292,27 @@ body {
       color: inherit;
       text-decoration: none;
     }
+
+    i.btn {
+      display: inline-block;
+      vertical-align: middle;
+      border-radius: var(--border-radius);
+
+      font-size: 10px;
+      font-style: normal;
+      font-weight: var(--font-heading-weight);
+      line-height: 10px;
+      letter-spacing: 1px;
+      padding: 4px 5px;
+
+      color: var(--theme-background);
+      background-color: var(--theme-foreground);
+    }
   }
 
   .grid-left .social-links {
     font-size: 15px;
+    line-height: 20px;
   }
 
   // Timeline
@@ -565,7 +600,7 @@ body {
       margin: 0px auto;
 
       display: grid;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 2fr 3fr;
       grid-template-rows: auto auto;
       grid-column-gap: var(--spacing);
       grid-row-gap: 0px;
@@ -579,9 +614,22 @@ body {
 
   // Print styles
   @media print {
+    .timeline-entry {
+      display: inline-block;
+      width: 100%;
+      page-break-inside: avoid;
+    }
+
     // Reduce the progress bars
     .progress-bar {
+      margin-bottom: calc(var(--spacing) / 3);
+      text-transform: none;
+
+      h4 {
+        margin: 0px;
+      }
       .progress-bar-container {
+        display: none;
         height: calc(var(--font-normal-size) / 2);
       }
     }
@@ -601,21 +649,39 @@ body {
       display: none;
     }
 
-    // Grid layout for our desktop website
+    // Grid layout for our print website
     main {
       width: 18cm;
       max-width: 100%;
       margin: 0px auto;
 
       display: grid;
-      grid-template-columns: 4fr 5fr;
+      grid-template-columns: 3fr 5fr;
       grid-template-rows: auto auto;
       grid-column-gap: var(--spacing);
       grid-row-gap: 0px;
     }
 
     // Position stuff on the grid
-    .grid-left { grid-area: 1 / 1 / 2 / 2; }
+    .grid-left {
+      grid-area: 1 / 1 / 2 / 2;
+    
+      // Reduce font sizes on left sidebar
+      --font-title-size: 21px;
+      --font-subtitle-size: 10.5px;
+      --font-opening-size: 14px;
+      --font-heading-size: 14px;
+      --font-normal-size: 12px;
+      --font-normal-spacing: 1px;
+
+      // Also reduce spacings
+      --spacing-vertical: 30px;
+
+      // The block titles
+      h3 {
+        margin-bottom: calc(var(--spacing) / 2);
+      }
+    }
     .grid-right { grid-area: 1 / 2 / 2 / 3; }
     .grid-bottom { display: none; }
   }

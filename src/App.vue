@@ -18,6 +18,33 @@
         <social-links></social-links>
       </page-block>
 
+      <!-- Contact (print-only) -->
+      <page-block title="Contact Me" class="contact-info print-only">
+        <!-- GitHub -->
+        <a target="_blank" href="https://github.com/matheusmk3" title="View my GitHub">
+          <i class="fab fa-github-alt"></i>
+          /matheusmk3
+        </a>
+
+        <!-- LinkedIn -->
+        <a target="_blank" href="https://linkedin.com/in/matheus-pratta" title="View my LinkedIn">
+          <i class="fab fa-linkedin"></i>
+          /in/matheus-pratta
+        </a>
+
+        <!-- Phone -->
+        <a target="_blank" href="tel:+5519983359825" title="Call me on mobile">
+          <i class="fas fa-phone-alt"></i>
+          +55 19 98335-9825
+        </a>
+
+        <!-- Email -->
+        <a target="_blank" href="mailto:eu@matheus.io" title="Email me">
+          <i class="far fa-envelope"></i>
+          eu@matheus.io
+        </a>
+      </page-block>
+
       <!-- Stats: Languages -->
       <page-block title="Languages" class="accent-01">
         <progress-bar :title="skill" :progress="score" v-for="(score, skill) in skills.languages" v-bind:key="skill" />
@@ -44,8 +71,18 @@
       <!-- Timeline: Work Experience -->
       <page-block title="Work Experience">
         <timeline>
-          <!-- Timeline entry template -->
-          <timeline-entry :class="{ current: entry.current }" v-for="(entry, i) in timeline" v-bind:key="i">
+          <!-- Timeline entry template (Current Work) -->
+          <timeline-entry :class="[`type-${entry.type}`]" class="current" v-for="(entry, i) in workCurrent" v-bind:key="i">
+            <h4 class="experience-company">{{ entry.title }}</h4>
+            <strong class="experience-position">{{ entry.subtitle }}</strong>
+            <span class="experience-time">{{ entry.period }}</span>
+            <div class="experience-description" v-if="entry.description">
+              <p v-for="(paragraph, i) in entry.description" v-bind:key="i">{{ paragraph }}</p>
+            </div>
+          </timeline-entry>
+
+          <!-- Timeline entry template (Past Work) -->
+          <timeline-entry :class="[`type-${entry.type}`]" class="" v-for="(entry, i) in workPast" v-bind:key="i">
             <h4 class="experience-company">{{ entry.title }}</h4>
             <strong class="experience-position">{{ entry.subtitle }}</strong>
             <span class="experience-time">{{ entry.period }}</span>
@@ -109,7 +146,13 @@ export default {
   },
   computed: {
     timeline () { return this.resume.timeline.reverse() },
-    skills () { return this.resume.skills }
+    skills () { return this.resume.skills },
+    workCurrent () {
+      return this.timeline.filter(entry => entry.current)
+    },
+    workPast () {
+      return this.timeline.filter(entry => !entry.current)
+    }
   },
   components: {
     PageBlock,
