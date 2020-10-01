@@ -3,8 +3,8 @@
     "languages": {
       "PHP": 1.00,
       "JavaScript": 0.86,
-      "HTML5": 0.82,
-      "CSS/SCSS": 0.74,
+      "HTML5": 0.76,
+      "CSS/SCSS": 0.64,
       "C#": 0.14
     },
     "tools": {
@@ -61,6 +61,14 @@
       ]
     }, {
       "type": "work",
+      "title": "Tecnoblog",
+      "subtitle": "Full-stack Web Developer",
+      "period": "Jun. 2018 - Sep. 2018",
+      "description": [
+        "During my first time at Tecnoblog, I was responsible for implementing new features on the existing website and mostly doing migration and optimization work after the acquisition of the Meio Bit news portal. I also helped on the creation of an in-house tool for implementing both Google GPT and Prebid in an integrated manner."
+      ]
+    }, {
+      "type": "work",
       "title": "B2S Marketing",
       "subtitle": "Full-stack Web Developer",
       "period": "Jun. 2016 - Jun. 2019",
@@ -71,10 +79,11 @@
     }, {
       "type": "work",
       "title": "Tecnoblog",
-      "subtitle": "Full-stack Web Developer",
-      "period": "Jun. 2018 - Sep. 2018",
+      "subtitle": "Developer",
+      "period": "Jul. 2019 - Sep. 2020",
       "description": [
-        "During my first time at Tecnoblog, I was responsible for implementing new features on the existing website and mostly doing migration and optimization work after the acquisition of the Meio Bit news portal. I also helped on the creation of an in-house tool for implementing both Google GPT and Prebid in an integrated manner."
+        "At Tecnoblog I am responsible for maintenance and optimization of both the websites Tecnoblog and Meio Bit, which includes both performance-related optimization and also SEO-related, by working closely to the editorial team.",
+        "I also worked on developing both existing and new tools, creating new pages and features and improving the current Google GPT and Prebid implementation."
       ]
     }, {
       "type": "work",
@@ -87,18 +96,8 @@
       ]
     }, {
       "type": "work",
-      "title": "Tecnoblog",
-      "subtitle": "Developer",
-      "period": "Jul. 2019 - Today",
-      "current": true,
-      "description": [
-        "At Tecnoblog I am responsible for maintenance and optimization of both the websites Tecnoblog and Meio Bit, which includes both performance-related optimization and also SEO-related, by working closely to the editorial team.",
-        "I also worked on developing both existing and new tools, creating new pages and features and improving the current Google GPT and Prebid implementation."
-      ]
-    }, {
-      "type": "work",
       "title": "Toptal",
-      "subtitle": "Software Developer - Freelancer",
+      "subtitle": "Software Developer,  Contractor",
       "period": "Mar. 2020 - Today",
       "current": true,
       "description": [
