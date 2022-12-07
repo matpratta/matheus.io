@@ -4,7 +4,7 @@
     <a target="_blank" title="Contact me via Telegram" href="https://t.me/matt_pratta"><i class="fab fa-telegram-plane"></i></a>
 
     <!-- GitHub -->
-    <a target="_blank" title="Find me at GitHub" href="https://github.com/matheusmk3"><i class="fab fa-github-alt"></i></a>
+    <a target="_blank" title="Find me at GitHub" href="https://github.com/matpratta"><i class="fab fa-github-alt"></i></a>
 
     <!-- Blog -->
     <a target="_blank" title="Read my blog" href="https://blog.matheus.io"><i class="btn">BLOG</i></a>
