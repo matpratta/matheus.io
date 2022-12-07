@@ -21,9 +21,9 @@
       <!-- Contact (print-only) -->
       <page-block title="Contact Me" class="contact-info print-only">
         <!-- GitHub -->
-        <a target="_blank" href="https://github.com/matheusmk3" title="View my GitHub">
+        <a target="_blank" href="https://github.com/matpratta" title="View my GitHub">
           <i class="fab fa-github-alt"></i>
-          /matheusmk3
+          /matpratta
         </a>
 
         <!-- LinkedIn -->
