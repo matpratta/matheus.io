@@ -3,7 +3,7 @@
     "languages": {
       "PHP": 1.00,
       "JavaScript": 0.86,
-      "HTML/CSS/SCSS": 0.73,
+      "HTML / CSS / SCSS": 0.73,
       "Typescript": 0.31
     },
     "tools": {
@@ -11,7 +11,7 @@
       "Vue.js": 0.74,
       "WordPress": 0.63,
       "Node.js": 0.43,
-      "Docker/Lando": 0.32
+      "Docker / Lando": 0.32
     },
     "areas": {
       "Back-end Development": 1.00,

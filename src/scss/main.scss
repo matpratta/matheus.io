@@ -453,6 +453,7 @@ body {
       display: block;
       width: var(--spacing);
       height: calc(3 * var(--font-input-size));
+      padding-left: calc(var(--spacing) / 3);
 
       font-size: var(--font-input-size-icon);
       line-height: calc(3 * var(--font-input-size));
