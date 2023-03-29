@@ -3,10 +3,10 @@
   "name": "matheus.io",
   "alias": ["matheus.io"],
   "builds": [
-    { "src": "api/**.js", "use": "@now/node" },
-    { "src": "public/favicon.png", "use": "@now/static" },
-    { "src": "public/favicon-thumb.jpg", "use": "@now/static" },
-    { "src": "package.json", "use": "@now/static-build" }
+    { "src": "api/**.js", "use": "@vercel/node" },
+    { "src": "public/favicon.png", "use": "@vercel/static" },
+    { "src": "public/favicon-thumb.jpg", "use": "@vercel/static" },
+    { "src": "package.json", "use": "@vercel/static-build" }
   ],
   "routes": [
     { "src": "/favicon.png", "dest": "/public/favicon.png" },
