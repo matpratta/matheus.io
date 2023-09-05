@@ -2,16 +2,16 @@
   "skills": {
     "languages": {
       "PHP": 1.00,
-      "JavaScript": 0.86,
-      "HTML / CSS / SCSS": 0.73,
-      "Typescript": 0.31
+      "JavaScript / Typescript": 0.86,
+      "Shopify Liquid": 0.57
     },
     "tools": {
       "Laravel": 1.00,
       "Vue.js": 0.74,
       "WordPress": 0.63,
-      "Node.js": 0.43,
-      "Docker / Lando": 0.32
+      "Node.js": 0.52,
+      "Figma": 0.42,
+      "Google Analytics": 0
     },
     "areas": {
       "Back-end Development": 1.00,
@@ -26,8 +26,8 @@
   "timeline": [
     {
       "type": "work",
-      "title": "LunarCP",
-      "subtitle": "Support Staff & Forum Moderator",
+      "company": "LunarCP",
+      "position": "Support Staff & Forum Moderator",
       "period": "Dec. 2011 - Apr. 2014",
       "description": [
         "I helped both as Forum Moderator and Support Staff for a free web hosting initiative, which in turn helped many people start their careers with web development, specially on developing countries and regions where one couldn't afford paying for hosting.",
@@ -36,40 +36,40 @@
       ]
     }, {
       "type": "work",
-      "title": "Freelancer",
-      "subtitle": "Web Developer",
+      "company": "Freelancer",
+      "position": "Web Developer",
       "period": "Nov. 2011 - Sep. 2013",
       "description": [
         "My first contact at working with web development. During this period I developed a few institutional websites for local companies and a small CMS for a realtor business."
       ]
     }, {
       "type": "work",
-      "title": "Digital Video",
-      "subtitle": "Video Editor",
+      "company": "Digital Video",
+      "position": "Video Editor",
       "period": "Oct. 2012 - Mar. 2014",
       "description": [
         "Worked mostly editing social events like weddings, with some experience too in camera operation, color grading and disc authoring using tools like Adobe Premiere Pro, Photoshop, Encore, Sony DVD Architect and GrassValley Edius."
       ]
     }, {
       "type": "work",
-      "title": "Foto Click Digital",
-      "subtitle": "Photo Editor",
+      "company": "Foto Click Digital",
+      "position": "Photo Editor",
       "period": "Jan. 2014 - Nov. 2015",
       "description": [
         "During this period I worked editing both event and studio photography, while also creating designs for cards, clothing and similar stuff. Also worked with video production and editing for this company."
       ]
     }, {
       "type": "work",
-      "title": "Tecnoblog",
-      "subtitle": "Full-stack Web Developer",
+      "company": "Tecnoblog",
+      "position": "Full-stack Developer",
       "period": "Jun. 2018 - Sep. 2018",
       "description": [
         "During my first time at Tecnoblog, I was responsible for implementing new features on the existing website and mostly doing migration and optimization work after the acquisition of the Meio Bit news portal. I also helped on the creation of an in-house tool for implementing both Google GPT and Prebid in an integrated manner."
       ]
     }, {
       "type": "work",
-      "title": "B2S Marketing",
-      "subtitle": "Full-stack Web Developer",
+      "company": "B2S Marketing",
+      "position": "Full-stack Web Developer",
       "period": "Jun. 2016 - Jun. 2019",
       "description": [
         "Responsible for development, maintenance and optimization of both internal and client applications, systems and websites, using tools like WordPress, Laravel, Lliure and CodeIgniter.",
@@ -77,8 +77,8 @@
       ]
     }, {
       "type": "work",
-      "title": "Tecnoblog",
-      "subtitle": "Developer",
+      "company": "Tecnoblog",
+      "position": "Full-stack Developer",
       "period": "Jul. 2019 - Sep. 2020",
       "description": [
         "At Tecnoblog I was responsible for maintenance and optimization of the news portals Tecnoblog and Meio Bit, which includes both performance and SEO related optimizations, while also working closely to their design and editorial teams.",
@@ -86,8 +86,8 @@
       ]
     }, {
       "type": "work",
-      "title": "Subatomic",
-      "subtitle": "Founder & Developer",
+      "company": "Subatomic",
+      "position": "Founder & Developer",
       "period": "Nov. 2015 - Today",
       "current": true,
       "description": [
@@ -95,8 +95,8 @@
       ]
     }, {
       "type": "work",
-      "title": "Toptal",
-      "subtitle": "Software Developer,  Contractor",
+      "company": "Toptal",
+      "position": "Software Developer,  Contractor",
       "period": "Mar. 2020 - Today",
       "current": true,
       "description": [

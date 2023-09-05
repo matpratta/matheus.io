@@ -2,9 +2,8 @@
  * This code is part of matheus.io, it is freely available for study, hacking or whatever you want to do with it.
  */
 
-// This website uses the font Montserrat @ weights 300 (Light), 400 (Regular), 500 (Medium), 700 (Bold) and 900 (Black)
-// TODO: Reduce amounts of fonts
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900&display=swap');
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family=Lexend:wght@700&family=Montserrat:wght@400;500;700;900&display=swap');
 
 // We also need FontAwesome here
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css');
@@ -16,14 +15,14 @@ body {
   --spacing-vertical: 75px;
 
   // Here we define our website's main theme colors
-  --theme-background: #0d0428;
-  --theme-background-light: #1e143d;
-  --theme-foreground: #ffffff;
-  --theme-foreground-light: rgba(255, 255, 255, 0.70);
-  --theme-foreground-lighter: rgba(255, 255, 255, 0.50);
+  --theme-background: #ffffff;
+  --theme-background-light: #eeeeee;
+  --theme-foreground: #0d0428;
+  --theme-foreground-light: #1e143d;
+  --theme-foreground-lighter: rgba(#1e143d, 0.70);
 
   // Here we define our accent colors
-  --theme-accent-foreground: var(--theme-background);
+  --theme-accent-foreground: var(--theme-foreground);
   --theme-accent-fill-01: #28ff85;
   --theme-accent-fill-02: #ffa72d;
   --theme-accent-fill-03: #2672ff;
@@ -94,17 +93,17 @@ body {
   --icon-size: 16px;
 }
 
-// Here we create our "light theme", so that by default the user is greeted in a "dark theme" :)
-body.light-theme {
+// Here we create our "dark theme", so that by default the user is greeted in a "light theme" :)
+body.dark-theme {
   // Here we define our website's main theme colors
-  --theme-background: #ffffff;
-  --theme-background-light: #eeeeee;
-  --theme-foreground: #0d0428;
-  --theme-foreground-light: #1e143d;
-  --theme-foreground-lighter: rgba(#1e143d, 0.70);
+  --theme-background: #0d0428;
+  --theme-background-light: #1e143d;
+  --theme-foreground: #ffffff;
+  --theme-foreground-light: rgba(255, 255, 255, 0.70);
+  --theme-foreground-lighter: rgba(255, 255, 255, 0.50);
 
   // Here we define our accent colors
-  --theme-accent-foreground: var(--theme-foreground);
+  --theme-accent-foreground: var(--theme-background);
   --theme-accent-fill-01: #28ff85;
   --theme-accent-fill-02: #ffa72d;
   --theme-accent-fill-03: #2672ff;
@@ -160,6 +159,7 @@ body {
 
     .progress-bar-container {
       position: relative;
+      display: none;
 
       height: var(--font-normal-size);
       border-radius: var(--border-radius);
@@ -372,31 +372,34 @@ body {
         display: block;
         margin: 0px;
         margin-bottom: calc(var(--spacing) / 8);
+        transform: translateY(-3px);
 
-        font-size: var(--font-normal-size);
-        font-weight: var(--font-normal-weight);
-        letter-spacing: var(--font-normal-spacing);
-        opacity: var(--font-normal-opacity);
+        font-family: Montserrat, sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        text-transform: none;
+        letter-spacing: 0.05em;
+        opacity: 0.9;
       }
       .experience-company {
         display: block;
         margin: 0px;
         margin-bottom: calc(var(--spacing) / 8);
 
-        font-size: var(--font-light-size);
-        font-weight: var(--font-lighteweight);
-        letter-spacing: var(--font-light-spacing);
-        opacity: var(--font-light-opacity);
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        opacity: 0.8;
       }
       .experience-time {
         display: block;
         margin: 0px;
         margin-bottom: calc(var(--spacing) / 8);
 
-        font-size: var(--font-lightest-size);
-        font-weight: var(--font-lightest-weight);
-        letter-spacing: var(--font-lightest-spacing);
-        opacity: var(--font-lightest-opacity);
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        opacity: 0.7;
       }
 
       .experience-description {
@@ -405,10 +408,11 @@ body {
         margin-bottom: calc(var(--spacing) / 8);
 
         text-transform: none;
-        font-size: var(--font-lighter-size);
-        font-weight: var(--font-lighter-weight);
-        letter-spacing: var(--font-lighter-spacing);
-        opacity: var(--font-lighter-opacity);
+        font-family: 'IBM Plex Serif', serif;
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        opacity: 0.8;
       }
     }
   }
@@ -580,6 +584,14 @@ body {
       padding: 0px var(--spacing);
     }
 
+    &.about-section {
+      text-transform: none;
+      font-family: 'IBM Plex Serif', serif;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
     &>p {
       margin: var(--spacing) auto;
     }
@@ -602,15 +614,14 @@ body {
 
       display: grid;
       grid-template-columns: 2fr 3fr;
-      grid-template-rows: auto auto;
       grid-column-gap: var(--spacing);
       grid-row-gap: 0px;
     }
 
     // Position stuff on the grid
-    .grid-left { grid-area: 1 / 1 / 2 / 2; }
-    .grid-right { grid-area: 1 / 2 / 2 / 3; }
-    .grid-bottom { grid-area: 2 / 1 / 3 / 3; }
+    .grid-bottom {
+      grid-column: 1 / span 2;
+    }
   }
 
   // Print styles

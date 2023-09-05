@@ -1,7 +1,7 @@
 <template>
   <div class="social-links">
     <!-- Telegram -->
-    <a target="_blank" title="Contact me via Telegram" href="https://t.me/matt_pratta"><i class="fab fa-telegram-plane"></i></a>
+    <a target="_blank" title="Contact me via email" href="mailto:eu@matheus.io"><i class="far fa-envelope"></i></a>
 
     <!-- GitHub -->
     <a target="_blank" title="Find me at GitHub" href="https://github.com/matpratta"><i class="fab fa-github-alt"></i></a>

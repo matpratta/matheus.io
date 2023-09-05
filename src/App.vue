@@ -2,9 +2,6 @@
   <main id="app">
     <!-- Desktop Grid: Left side -->
     <div class="grid-left">
-      <!-- Theme Switch -->
-      <light-theme-switch />
-
       <!-- Main Heading -->
       <page-block class="extra-spacing">
         <img src="./assets/me.jpg" alt="Hi, this is me!" />
@@ -45,6 +42,19 @@
         </a>
       </page-block>
 
+      <!-- About -->
+      <!-- <page-block class="extra-spacing about-section">
+        <p>
+          I have been helping business and individuals to build their online presence since 2011.
+        </p>
+        <p>
+          My main strengths are on back-end development, with PHP and Laravel, but I also enjoy creating front-ends with Vue, JavaScript and TypeScript.
+        </p>
+        <p>
+          Other technologies I have worked with before include Shopify's Liquid language, WordPress, and C#.
+        </p>
+      </page-block> -->
+
       <!-- Stats: Languages -->
       <page-block title="Languages" class="accent-01">
         <progress-bar :title="skill" :progress="score" v-for="(score, skill) in skills.languages" v-bind:key="skill" />
@@ -72,51 +82,11 @@
       <page-block title="Work Experience">
         <timeline>
           <!-- Timeline entry template (Current Work) -->
-          <timeline-entry :class="[`type-${entry.type}`]" class="current" v-for="(entry, i) in workCurrent" v-bind:key="i">
-            <h4 class="experience-company">{{ entry.title }}</h4>
-            <strong class="experience-position">{{ entry.subtitle }}</strong>
-            <span class="experience-time">{{ entry.period }}</span>
-            <div class="experience-description" v-if="entry.description">
-              <p v-for="(paragraph, i) in entry.description" v-bind:key="i">{{ paragraph }}</p>
-            </div>
-          </timeline-entry>
+          <timeline-entry v-for="(entry, i) in workCurrent" :key="`current-${i}`" :class="[`type-${entry.type}`]" :entry="entry" class="current" />
 
           <!-- Timeline entry template (Past Work) -->
-          <timeline-entry :class="[`type-${entry.type}`]" class="" v-for="(entry, i) in workPast" v-bind:key="i">
-            <h4 class="experience-company">{{ entry.title }}</h4>
-            <strong class="experience-position">{{ entry.subtitle }}</strong>
-            <span class="experience-time">{{ entry.period }}</span>
-            <div class="experience-description" v-if="entry.description">
-              <p v-for="(paragraph, i) in entry.description" v-bind:key="i">{{ paragraph }}</p>
-            </div>
-          </timeline-entry>
+          <timeline-entry v-for="(entry, i) in workPast" :key="`previous-${i}`" :class="[`type-${entry.type}`]" :entry="entry" />
         </timeline>
-      </page-block>
-    </div>
-
-    <!-- Desktop Grid: Bottom part -->
-    <div class="grid-bottom">
-      <!-- Contact Section -->
-      <page-block title="Contact Me">
-        <div class="extra-spacing">
-          <!-- Social Links -->
-          <social-links></social-links>
-        </div>
-
-        <!-- Helper text -->
-        <p>You can get in touch with me via the social links above or through the contact form below:</p>
-
-        <!-- Contact Form -->
-        <improved-form :class="{ submitted: formSubmitted }" action="/api/contact.js" method="post" @submit-response="handleSubmitResponse">
-          <text-box required name="name" placeholder="Name" icon="far fa-smile" />
-          <text-box required name="email" placeholder="Email" icon="far fa-envelope" type="email" />
-          <text-box required name="subject" placeholder="Subject" icon="far fa-sticky-note" />
-          <text-box required name="message" placeholder="Message" icon="far fa-comment-dots" :lines="5" />
-          <button type="submit">Send</button>
-        </improved-form>
-
-        <!-- Confirmation message -->
-        <p v-if="formSubmitted">Your message was received! Soon I will be in touch with you back!</p>
       </page-block>
     </div>
   </main>
