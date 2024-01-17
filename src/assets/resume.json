@@ -86,6 +86,15 @@
       ]
     }, {
       "type": "work",
+      "company": "Fintech in the IDtech/KYC market",
+      "position": "Back-end Consultant (Laravel)",
+      "period": "Mar. 2023 - May 2023",
+      "description": [
+        "Worked as a independent consultant/freelancer along with the company's internal development teams.",
+        "Some highlights on this position were improving their product's performance, mainly by optimizing certain database queries, and implementing a new pub/sub system for communicating events between the application's back-end and front-end."
+      ]
+    }, {
+      "type": "work",
       "company": "Subatomic",
       "position": "Founder & Developer",
       "period": "Nov. 2015 - Today",
